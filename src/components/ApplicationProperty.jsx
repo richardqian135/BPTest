@@ -5,7 +5,6 @@ const Property = {
 	//key: "e665e101c3f22b28e47942fe0d6f0ae5"
 	//key: "e665e101c3f22b28e47942",
 	url: "http://api.openweathermap.org/data/2.5/forecast?zip=",
-	gmapkey: "AIzaSyBjeLutBKIhKN2wPI-dvhmNkGr1c5rA4Bc",
 	zip: "60521"
 };
 export default Property;
