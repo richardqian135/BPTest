@@ -70,7 +70,7 @@ const App = () => {
 		return (
 			<form onSubmit={handleSubmit(onSubmit)} data-testid="form">
 				<label><h3>Please enter zipcode:</h3></label>
-				<input name="zipcode" defaultValue="60521" ref={register({ required: true })} />
+				<input name="zipcode" defaultValue="" ref={register({ required: true })} />
 
 				{errors.zipcodeRequired && <span>This field is required</span>}
 
