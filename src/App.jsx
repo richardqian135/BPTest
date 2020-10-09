@@ -58,13 +58,9 @@ const App = () => {
 		)
 	};
 
-	return haserror ? (
-		<SetServerError></SetServerError>
-	) : (
-
-			<div align='center'>
-				<div><h1 >Five Day Weather Forecast</h1></div>
-				<form onSubmit={handleSubmit(onSubmit)} data-testid="form">
+	function ZipForm(){
+		return(
+			<form onSubmit={handleSubmit(onSubmit)} data-testid="form">
 					<label><h3>Please enter zipcode:</h3></label>
 					<input name="zipcode" defaultValue="60521" ref={register({ required: true })} />
 
@@ -72,6 +68,16 @@ const App = () => {
 
 					<input type="submit" />
 				</form>
+		)
+	}
+	
+	return haserror ? (
+		<SetServerError></SetServerError>
+	) : (
+
+			<div align='center'>
+				<div><h1 >Five Day Weather Forecast</h1></div>
+				<ZipForm></ZipForm>
 				<div><h3>{cityname}, {countryname}</h3></div>
 				<div class="slider">
 					{weatherdays.map((reading, index) => <DayCard reading={reading} key={index} />)}
