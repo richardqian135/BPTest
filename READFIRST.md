@@ -2,8 +2,12 @@
 
 ## Prerequisites
 
-- NodeJS ^8.9
-- npm ^5.6
+-NodeJS ^8.9
+-npm ^5.6
+-axios
+-@material-ui/core/
+-moment
+-react-hook-form
 
 ## Steps to Run inside CodeMix
 
