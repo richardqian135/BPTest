@@ -53,35 +53,44 @@ const App = () => {
 				<div><h3>API Error</h3></div>
 				<div>code:{errcode}</div>
 				<div>message:{errtext}</div>
+				<div>
+					<button onClick={refreshPage}>Try Again</button>
+				</div>
 			</div>
 
 		)
 	};
 
-	function ZipForm(){
-		return(
+	function refreshPage() {
+		window.location.reload(false);
+	};
+
+
+	function ZipForm() {
+		return (
 			<form onSubmit={handleSubmit(onSubmit)} data-testid="form">
-					<label><h3>Please enter zipcode:</h3></label>
-					<input name="zipcode" defaultValue="60521" ref={register({ required: true })} />
+				<label><h3>Please enter zipcode:</h3></label>
+				<input name="zipcode" defaultValue="60521" ref={register({ required: true })} />
 
-					{errors.zipcodeRequired && <span>This field is required</span>}
+				{errors.zipcodeRequired && <span>This field is required</span>}
 
-					<input type="submit" />
-				</form>
+				<input type="submit" />
+			</form>
 		)
 	}
-	
+
 	return haserror ? (
 		<SetServerError></SetServerError>
+
 	) : (
 
 			<div align='center'>
 				<div><h1 >Five Day Weather Forecast</h1></div>
 				<ZipForm></ZipForm>
 				<div><h3>{cityname}, {countryname}</h3></div>
-				<div class="slider">
+				<div className="slider">
 					{weatherdays.map((reading, index) => <DayCard reading={reading} key={index} />)}
-				</div>				
+				</div>
 			</div>
 
 		)
